@@ -1,3 +1,8 @@
+# Full `index.html` Replacement
+
+Copy EVERYTHING below and paste it into your GitHub `index.html` file.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +12,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-
     :root{
       --black:#050506;
       --deep:#0b0908;
-      --charcoal:#111014;
       --card:#151116;
       --gold:#c8901a;
       --amber:#e0a840;
@@ -24,510 +26,181 @@
       --border:rgba(224,168,64,.22);
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--black);color:var(--cream);font-family:'Syne',sans-serif;overflow-x:hidden}
+    img{width:100%;display:block}
+    a{text-decoration:none;color:inherit}
 
-    body{
-      background:var(--black);
-      color:var(--cream);
-      font-family:'Syne',sans-serif;
-      overflow-x:hidden;
-    }
+    .container{width:min(1280px,92%);margin:auto}
 
-    img{
-      width:100%;
-      display:block;
-    }
+    nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(0,0,0,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
+    .logo{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);letter-spacing:.03em}
+    .nav-links{display:flex;gap:2rem;color:var(--muted);font-size:.92rem}
+    .nav-links a:hover{color:var(--cream)}
+    .nav-cta{border:1px solid var(--gold);padding:.85rem 1.3rem;border-radius:999px;color:var(--cream);transition:.3s ease}
+    .nav-cta:hover{background:var(--gold);color:#000}
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+    .hero{min-height:100vh;display:flex;align-items:center;padding-top:7rem;background:radial-gradient(circle at top right,rgba(200,144,26,.13),transparent 34%),var(--black)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+    .hero-copy h1{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,7vw,7.2rem);line-height:.92;font-weight:300;margin-bottom:2rem}
+    .hero-copy em{color:var(--gold);font-style:italic}
+    .hero-copy p{color:var(--muted);font-size:1.05rem;line-height:1.9;max-width:580px;margin-bottom:2rem}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:1rem 1.5rem;border-radius:999px;transition:.3s ease;font-size:.88rem;border:1px solid rgba(255,255,255,.14)}
+    .btn-primary{background:var(--gold);color:#000;border-color:var(--gold)}
+    .btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px)}
+    .btn-secondary{color:var(--cream)}
+    .hero-image img{border-radius:26px;border:1px solid var(--border);object-fit:cover;min-height:720px;max-height:780px;filter:brightness(.88) contrast(1.05)}
 
-    .container{
-      width:min(1280px,92%);
-      margin:auto;
-    }
+    section{padding:7rem 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3rem}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5rem);font-weight:300;line-height:1}
+    .section-title em{color:var(--gold);font-style:italic}
+    .section-head p{max-width:440px;color:var(--muted);line-height:1.8}
+    .eyebrow{color:var(--gold);margin-bottom:1rem;letter-spacing:.15em;text-transform:uppercase;font-size:.8rem}
 
-    nav{
-      position:fixed;
-      width:100%;
-      top:0;
-      z-index:100;
-      backdrop-filter:blur(16px);
-      background:rgba(0,0,0,.45);
-      border-bottom:1px solid rgba(255,255,255,.05);
-    }
+    .live-section{background:var(--deep)}
+    .live-grid{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+    .live-main img,.live-stack img{height:100%;object-fit:cover;border:1px solid var(--border);filter:brightness(.9) contrast(1.05)}
+    .live-main img{min-height:720px}
+    .live-stack{display:grid;gap:1rem}
+    .live-stack img{min-height:352px}
 
-    .nav-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:1.2rem 0;
-    }
+    .studio-section{background:var(--black)}
+    .studio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .studio-card{overflow:hidden;border-radius:22px;border:1px solid var(--border);background:var(--card)}
+    .studio-card img{height:520px;object-fit:cover;transition:transform .6s ease;filter:brightness(.88) contrast(1.08)}
+    .studio-card:hover img{transform:scale(1.04)}
 
-    .logo{
-      font-family:'Cormorant Garamond',serif;
-      font-size:2rem;
-      color:var(--gold);
-      letter-spacing:.03em;
-    }
+    .about-section{background:var(--deep)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .about-grid img{border-radius:24px;border:1px solid var(--border);height:620px;object-fit:cover;filter:brightness(.9) contrast(1.05)}
+    .about-copy p{color:var(--muted);line-height:1.9;margin-top:1.4rem}
 
-    .nav-links{
-      display:flex;
-      gap:2rem;
-      color:var(--muted);
-      font-size:.95rem;
-    }
+    .booking{text-align:center;background:radial-gradient(circle at top,rgba(200,144,26,.15),transparent 34%),var(--black)}
+    .booking p{color:var(--muted);max-width:720px;margin:1.5rem auto 2rem;line-height:1.8}
+    .booking-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
 
-    .nav-links a:hover{
-      color:var(--cream);
-    }
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 0;color:var(--muted);text-align:center;font-size:.9rem}
 
-    .nav-cta{
-      border:1px solid var(--gold);
-      padding:.85rem 1.3rem;
-      border-radius:999px;
-      color:var(--cream);
-      transition:.3s ease;
-    }
-
-    .nav-cta:hover{
-      background:var(--gold);
-      color:#000;
-    }
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      padding-top:7rem;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:3rem;
-      align-items:center;
-    }
-
-    .hero-copy h1{
-      font-family:'Cormorant Garamond',serif;
-      font-size:6rem;
-      line-height:.92;
-      font-weight:300;
-      margin-bottom:2rem;
-    }
-
-    .hero-copy em{
-      color:var(--gold);
-      font-style:italic;
-    }
-
-    .hero-copy p{
-      color:var(--muted);
-      font-size:1.05rem;
-      line-height:1.9;
-      max-width:580px;
-      margin-bottom:2rem;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:1rem 1.5rem;
-      border-radius:999px;
-      transition:.3s ease;
-      font-size:.92rem;
-    }
-
-    .btn-primary{
-      background:var(--gold);
-      color:#000;
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-2px);
-    }
-
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,.15);
-      color:var(--cream);
-    }
-
-    .hero-image img{
-      border-radius:26px;
-      border:1px solid var(--border);
-      object-fit:cover;
-      min-height:720px;
-    }
-
-    section{
-      padding:7rem 0;
-    }
-
-    .section-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:end;
-      gap:2rem;
-      margin-bottom:3rem;
-    }
-
-    .section-title{
-      font-family:'Cormorant Garamond',serif;
-      font-size:4rem;
-      font-weight:300;
-      line-height:1;
-    }
-
-    .section-title em{
-      color:var(--gold);
-    }
-
-    .section-head p{
-      max-width:420px;
-      color:var(--muted);
-      line-height:1.8;
-    }
-
-    .eyebrow{
-      color:var(--gold);
-      margin-bottom:1rem;
-      letter-spacing:.15em;
-      text-transform:uppercase;
-      font-size:.8rem;
-    }
-
-    .experience-grid{
-      display:grid;
-      grid-template-columns:2fr 1fr;
-      gap:1rem;
-    }
-
-    .experience-grid img{
-      height:100%;
-      object-fit:cover;
-      border:1px solid var(--border);
-    }
-
-    .experience-stack{
-      display:grid;
-      gap:1rem;
-    }
-
-    .studio-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:1rem;
-    }
-
-    .studio-card{
-      overflow:hidden;
-      border-radius:22px;
-      border:1px solid var(--border);
-      background:var(--card);
-    }
-
-    .studio-card img{
-      height:100%;
-      object-fit:cover;
-      transition:transform .6s ease;
-    }
-
-    .studio-card:hover img{
-      transform:scale(1.04);
-    }
-
-    .manifesto-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:4rem;
-      align-items:center;
-    }
-
-    .manifesto-grid img{
-      border-radius:24px;
-      border:1px solid var(--border);
-    }
-
-    .manifesto-copy p{
-      color:var(--muted);
-      line-height:1.9;
-      margin-top:1.4rem;
-    }
-
-    .booking{
-      text-align:center;
-    }
-
-    .booking p{
-      color:var(--muted);
-      max-width:720px;
-      margin:1.5rem auto 2rem;
-      line-height:1.8;
-    }
-
-    .booking-actions{
-      display:flex;
-      justify-content:center;
-      gap:1rem;
-      flex-wrap:wrap;
-    }
-
-    footer{
-      border-top:1px solid rgba(255,255,255,.06);
-      padding:2rem 0;
-      color:var(--muted);
-      text-align:center;
-      font-size:.9rem;
-    }
-
-    .reveal{
-      opacity:0;
-      transform:translateY(50px);
-      transition:all .8s ease;
-    }
-
-    .reveal.visible{
-      opacity:1;
-      transform:translateY(0);
-    }
+    .reveal{opacity:0;transform:translateY(38px);transition:all .8s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
 
     @media(max-width:900px){
-
-      .nav-links{
-        display:none;
-      }
-
-      .hero-grid,
-      .manifesto-grid,
-      .experience-grid,
-      .studio-grid,
-      .section-head{
-        grid-template-columns:1fr;
-        display:grid;
-      }
-
-      .hero-copy h1{
-        font-size:4.3rem;
-      }
-
-      .section-title{
-        font-size:3rem;
-      }
-
-      .hero-image img{
-        min-height:420px;
-      }
-
+      .nav-links{display:none}
+      .hero-grid,.section-head,.live-grid,.studio-grid,.about-grid{grid-template-columns:1fr;display:grid}
+      .hero-copy h1{font-size:4.2rem}
+      .hero-image img,.live-main img,.about-grid img{min-height:420px;height:auto}
+      .live-stack img,.studio-card img{min-height:320px;height:360px}
     }
-
   </style>
 </head>
 <body>
 
 <nav>
   <div class="container nav-inner">
-    <div class="logo">Karl Antoine</div>
-
+    <a href="#top" class="logo">Karl Antoine</a>
     <div class="nav-links">
-      <a href="#experience">Experience</a>
+      <a href="#live">Live</a>
       <a href="#studio">Studio</a>
       <a href="#about">About</a>
       <a href="#booking">Contact</a>
     </div>
-
     <a class="nav-cta" href="#booking">Book Now</a>
   </div>
 </nav>
 
-<section class="hero">
+<section class="hero" id="top">
   <div class="container hero-grid">
-
     <div class="hero-copy reveal">
-      <h1>
-        Luxury sound<br>
-        experiences with<br>
-        <em>soul & atmosphere</em>
-      </h1>
-
-      <p>
-        Pianist, producer, music director, and sonic curator creating elevated musical environments through emotion, elegance, and unforgettable energy.
-      </p>
-
+      <div class="eyebrow">Luxury Sound Experiences</div>
+      <h1>Sound with<br><em>soul & atmosphere</em></h1>
+      <p>Pianist, producer, music director, and sonic curator creating elevated musical environments through emotion, elegance, and unforgettable energy.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#booking">Book The Experience</a>
-        <a class="btn btn-secondary" href="https://instagram.com/on_my_highest_timeline" target="_blank">Instagram</a>
+        <a class="btn btn-secondary" href="#live">Explore Live</a>
       </div>
     </div>
-
     <div class="hero-image reveal">
-      <img src="IMG_2187.png">
+      <img src="IMG_2187.png" alt="Karl Antoine portrait">
     </div>
-
   </div>
 </section>
 
-<section id="experience">
+<section class="live-section" id="live">
   <div class="container">
-
     <div class="section-head reveal">
       <div>
         <div class="eyebrow">01 — Live Experience</div>
-        <h2 class="section-title">
-          Music that changes <em>the atmosphere</em>
-        </h2>
+        <h2 class="section-title">Music that changes <em>the atmosphere</em></h2>
       </div>
-
-      <p>
-        From intimate lounges to full-band performances, Karl Antoine brings soulful musicianship, emotional presence, and refined musical direction to every stage.
-      </p>
+      <p>From intimate lounges to full-band performances, Karl Antoine brings soulful musicianship, emotional presence, and refined musical direction to every stage.</p>
     </div>
 
-    <div class="experience-grid">
-
-      <div class="reveal">
-        <img src="IMG_2184.png">
+    <div class="live-grid">
+      <div class="live-main reveal">
+        <img src="98C93FA2-4D62-49FF-9BFE-7103E48D74AD.PNG" alt="Live performance with band">
       </div>
-
-      <div class="experience-stack">
-        <img class="reveal" src="IMG_2186.png">
-        <img class="reveal" src="IMG_2188.png">
+      <div class="live-stack">
+        <img class="reveal" src="061162D2-6140-4409-92DB-48A6D9DDE68E.PNG" alt="Karl Antoine playing keys live">
+        <img class="reveal" src="680A927B-4C49-4609-BEBD-9115585D23E7.PNG" alt="Live vocalist performance">
       </div>
-
     </div>
-
   </div>
 </section>
 
-<section id="experience">
+<section class="studio-section" id="studio">
   <div class="container">
-
     <div class="section-head reveal">
       <div>
-        <div class="eyebrow">01 — Live Experience</div>
-        <h2 class="section-title">
-          Music that changes <em>the atmosphere</em>
-        </h2>
+        <div class="eyebrow">02 — Studio & Collaboration</div>
+        <h2 class="section-title">Crafting records with <em>emotion & atmosphere</em></h2>
       </div>
-
-      <p>
-        From intimate lounges to full-band performances, Karl Antoine brings soulful musicianship, emotional presence, and refined musical direction to every stage.
-      </p>
-    </div>
-
-    <div class="experience-grid">
-
-      <div class="reveal">
-        <img src="98C93FA2-4D62-49FF-9BFE-7103E48D74AD.PNG">
-      </div>
-
-      <div class="experience-stack">
-        <img class="reveal" src="061162D2-6140-4409-92DB-48A6D9DDE68E.PNG">
-        <img class="reveal" src="680A927B-4C49-4609-BEBD-9115585D23E7.PNG">
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<section class="studio" id="studio">
-
-  <div class="container">
-
-    <div class="section-head reveal">
-      <div>
-        <div class="eyebrow">02 — The Studio</div>
-        <h2 class="section-title">
-          Crafting records with <em>emotion & atmosphere</em>
-        </h2>
-      </div>
-
-      <p>
-        Production, arrangement, live instrumentation, and sonic direction designed to feel cinematic, soulful, and timeless.
-      </p>
+      <p>Production, arrangement, live instrumentation, and sonic direction designed to feel cinematic, soulful, and timeless.</p>
     </div>
 
     <div class="studio-grid">
-
       <div class="studio-card reveal">
-        <img src="D02252C5-D022-4A82-A349-224D15764DF4.PNG">
+        <img src="D02252C5-D022-4A82-A349-224D15764DF4.PNG" alt="Karl Antoine producing at laptop">
       </div>
-
       <div class="studio-card reveal">
-        <img src="EA5D09CB-69F7-4D40-B3A1-BD1A65381ADA.PNG">
+        <img src="EA5D09CB-69F7-4D40-B3A1-BD1A65381ADA.PNG" alt="Studio collaboration at console">
       </div>
-
       <div class="studio-card reveal">
-        <img src="C4285550-722A-49C4-9E27-A6BF01681B21.PNG">
+        <img src="C4285550-722A-49C4-9E27-A6BF01681B21.PNG" alt="Producer working on music equipment">
       </div>
-
       <div class="studio-card reveal">
-        <img src="4693C01C-51FE-4B68-8D0F-45BBBC973625.PNG">
+        <img src="4693C01C-51FE-4B68-8D0F-45BBBC973625.PNG" alt="Studio room collaboration">
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-<section class="manifesto" id="about">
-  <div class="container manifesto-grid">
-
+<section class="about-section" id="about">
+  <div class="container about-grid">
     <div class="reveal">
-      <img src="IMG_2183.png">
+      <img src="IMG_2183.png" alt="Luxury atmosphere visual">
     </div>
-
-    <div class="manifesto-copy reveal">
+    <div class="about-copy reveal">
       <div class="eyebrow">03 — The Brand</div>
-
-      <h2 class="section-title">
-        Sound designed to <em>move people</em>
-      </h2>
-
-      <p>
-        Karl Antoine creates more than performances. He creates atmosphere — the kind of sound that changes the emotional temperature of a room.
-      </p>
-
-      <p>
-        Whether through live piano, production, arrangement, or curated musical direction, every detail is shaped with elegance, warmth, and intention.
-      </p>
+      <h2 class="section-title">Sound designed to <em>move people</em></h2>
+      <p>Karl Antoine creates more than performances. He creates atmosphere — the kind of sound that changes the emotional temperature of a room.</p>
+      <p>Whether through live piano, production, arrangement, or curated musical direction, every detail is shaped with elegance, warmth, and intention.</p>
     </div>
-
   </div>
 </section>
 
 <section class="booking" id="booking">
   <div class="container reveal">
-
     <div class="eyebrow">Available For Select Bookings</div>
-
-    <h2 class="section-title">
-      Let’s Create <em>Something Unforgettable</em>
-    </h2>
-
-    <p>
-      Live performance, private events, music production, studio sessions, arrangement, mixing, and curated luxury musical experiences.
-    </p>
-
+    <h2 class="section-title">Let’s Create <em>Something Unforgettable</em></h2>
+    <p>Live performance, private events, music production, studio sessions, arrangement, mixing, and curated luxury musical experiences.</p>
     <div class="booking-actions">
       <a class="btn btn-primary" href="mailto:booking@karlantoine.com">Send Booking Inquiry</a>
-
-      <a class="btn btn-secondary" href="https://instagram.com/on_my_highest_timeline" target="_blank">
-        Instagram
-      </a>
+      <a class="btn btn-secondary" href="https://instagram.com/on_my_highest_timeline" target="_blank">Instagram</a>
     </div>
-
   </div>
 </section>
 
@@ -536,27 +209,15 @@
 </footer>
 
 <script>
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+    });
+  },{threshold:.12});
 
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-    }
-  });
-},{threshold:.12});
-
- document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 
 </body>
 </html>
 ```
-
-After you paste it:
-
-1. Scroll down
-2. Click `Commit changes`
-3. Click green `Commit changes` again
-4. Wait 30–60 seconds
-5. Refresh your website
