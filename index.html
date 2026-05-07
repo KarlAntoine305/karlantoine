@@ -154,7 +154,39 @@
       nav{padding:1rem 1.4rem}.nav-links{display:none}.nav-cta{font-size:.58rem;padding:.6rem .9rem}
       .hero{grid-template-columns:1fr}.hero-copy{padding:8rem 1.4rem 4rem}.hero-image{min-height:62vh}.hero h1{font-size:4.5rem}
       .container{padding:0 1.4rem}.section-head,.manifesto-grid,.studio-grid{grid-template-columns:1fr;display:grid}.section-head{align-items:start}.experience-grid,.gallery-grid{grid-template-columns:1fr}.portrait img,.studio-main img,.gallery-grid img,.gallery-grid img.tall{height:420px}footer{flex-direction:column;text-align:center;padding:1.6rem}
-    }
+.live-section{
+  padding:100px 0;
+}
+
+.live-grid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:18px;
+  margin-top:40px;
+}
+
+.live-large,
+.live-small{
+  border-radius:28px;
+  background-size:cover;
+  background-position:center;
+  min-height:320px;
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.live-large{
+  min-height:660px;
+}
+
+@media(max-width:900px){
+  .live-grid{
+    grid-template-columns:1fr;
+  }
+
+  .live-large{
+    min-height:420px;
+  }
+}    }
   </style>
 </head>
 <body>
@@ -197,7 +229,46 @@
         <span>Live Music</span><span>Private Events</span><span>Studio Production</span><span>Mixing Engineering</span><span>Gospel • Jazz • R&B</span><span>Luxury Atmosphere</span>
       </div>
     </div>
+<section id="live" class="live-section">
+  <div class="container">
 
+    <div class="section-heading">
+      <div>
+        <div class="section-kicker">Live Experience</div>
+        <h2>Music that changes the atmosphere.</h2>
+      </div>
+
+      <p>
+        From intimate lounges to full-band performances, Karl Antoine brings soulful musicianship, emotional presence, and refined musical direction to every stage.
+      </p>
+    </div>
+
+    <div class="live-grid">
+
+      <div class="live-large"
+        style="background-image:url('98C93FA2-4D62-49FF-9BFE-7103E48D74AD.PNG');">
+      </div>
+
+      <div>
+        <div class="live-small"
+          style="background-image:url('061162D2-6140-4409-92DB-48A6D9DDE68E.PNG'); margin-bottom:18px;">
+        </div>
+
+        <div class="live-small"
+          style="background-image:url('680A927B-4C49-4609-BEBD-9115585D23E7.PNG');">
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:40px;">
+      <a class="btn btn-primary" href="#contact">
+        Book Live Experience
+      </a>
+    </div>
+
+  </div>
+</section>
     <section class="manifesto" id="about">
       <div class="container manifesto-grid">
         <div class="portrait reveal">
