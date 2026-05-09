@@ -216,6 +216,33 @@ Copy EVERYTHING below and paste it into your GitHub `index.html` file.
     color:var(--gold);
     border-color:var(--gold);
 }
+    @media (max-width: 700px){
+  .event-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .event-flyer{
+    width:100%;
+    max-width:360px;
+  }
+
+  .event-content{
+    width:100%;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .event-date{
+    width:100%;
+  }
+
+  .event-info h3,
+  .event-info p{
+    word-break:normal;
+    overflow-wrap:anywhere;
+  }
+}
   </style>
 </head>
 <body>
